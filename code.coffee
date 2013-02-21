@@ -19,7 +19,6 @@ currentSlide = (n) ->
     thumbsPerCol = Math.ceil (19 / colWidth)
     thumbCount = thumbsPerCol * (cols - 1)
   thumbScale = (((18+margin) / thumbsPerCol) - margin) / 18
-  console.log "xxx", cols, colWidth, thumbScale, thumbsPerCol
 
   for slide, i in $slides
     $slide = $ slide
@@ -49,7 +48,6 @@ currentSlide = (n) ->
 layout = (n) ->
 
   emSize = Math.floor (($ window).height() / (18 + margin*1.2))
-  console.log "emsize", emSize
 
   $(".header").css("top", 18 + margin + "em")
 
@@ -60,14 +58,18 @@ layout = (n) ->
 
 slidePos = 0
 
+next = ->
+  ++slidePos
+  if slidePos > ($ ".slide").length
+    slidePos = 0
+  layout slidePos
+
 if Meteor.isClient
   Meteor.startup () ->
     layout slidePos
-    $("body").bind "keydown", ->
-      ++slidePos
-      if slidePos > ($ ".slide").length
-        slidePos = 0
-      layout slidePos
+    $("body").bind "keydown", next
+    $("body").bind "mousedown", next
+
     
 #    for section in $ "section"
 #      children = $(section).children "section"
