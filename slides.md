@@ -31,10 +31,11 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related
 
 ## Media (audio/video)
 
-- audio playback
+- audio playback 
+- webaudio
 - video playback
 - subtitles
-- media-capture - firefox/presto
+- media-capture -getUserMedia/Stream API - firefox/chrome/opera
 
 ## 2d/3d-graphics (canvas/webgl)
 
@@ -73,10 +74,13 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related
 - contenteditable
 - mathml
 - fonts
+- touch-events, device orientation
+- fullscreen-api
 
 ## Other
 
 - geolocation
+- typed arrays
 
 # Targets
 .
