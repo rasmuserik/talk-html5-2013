@@ -2,7 +2,6 @@
 
 http://opensourcedays.org/2013/content/html5-hacks-and-highlights
 
-
 Slide composition as markdown in progress below.
 
 # Intro
@@ -97,6 +96,12 @@ TODO
 
 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png/1280px-HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png
 
+## Storage/file/database (fileapi/indexeddb/localstorage)
+
+- localstorage
+- websql/indexeddb
+- fileapi
+
 ## Network (websockets)
 
 - websockets
@@ -106,6 +111,25 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related
     - cross-origin resource sharing
     - binary data
 
+## Process/IPC (webworkers, web messaging)
+
+- webworkers
+- cross-document messaging
+- ¿is it same communication?
+
+## Deployment (cache.manifest, async script loading, history)
+
+- offline apps
+- asynchronous script loading
+- history api
+
+
+## 2d/3d-graphics (canvas/webgl)
+
+- canvas 2d
+- webgl (Khronos, not w3c), based on OpenGL ES 2.0, Firefox, Chrome, disabled in Safari by default
+- svg (not android 2)
+
 ## Media (audio/video)
 
 - audio playback 
@@ -114,35 +138,11 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related
 - subtitles
 - media-capture -getUserMedia/Stream API - firefox/chrome/opera
 
-## 2d/3d-graphics (canvas/webgl)
-
-- canvas 2d
-- webgl (Khronos, not w3c), based on OpenGL ES 2.0, Firefox, Chrome, disabled in Safari by default
-- svg (not android 2)
-
-## Process/IPC (webworkers, web messaging)
-
-- webworkers
-- cross-document messaging
-- ¿is it same communication?
-
-## Storage/file/database (fileapi/indexeddb/localstorage)
-
-- localstorage
-- websql/indexeddb
-- fileapi
-
 ## Microdata
 
 - semantic web
 - linked data
 - html support for inline linked data 
-
-## Deployment (cache.manifest, async script loading, history)
-
-- offline apps
-- asynchronous script loading
-- history api
 
 ## User Interface (css3/...)
 
