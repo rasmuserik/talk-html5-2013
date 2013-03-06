@@ -29,14 +29,14 @@ Slide composition as markdown in progress below.
 
 https://en.wikipedia.org/wiki/File:Web_browser_by_country.svg
 
-### Performance
+### Performance - under the hood
 
-## Browser
+## Web
 
-- Just served
-- HTML5 offline apps / cache manifest
-- Browser-apps
-- Browser addons for stronger api
+- Web apps
+- HTML5 offline apps
+- Browser apps
+- Browser add-ons
 
 ### HTML5 app marketplaces
 
@@ -49,15 +49,32 @@ https://en.wikipedia.org/wiki/File:Web_browser_by_country.svg
 
 - Chrome Extensions
     - zipped 
+    - html-pages
 - Firefox Add-ons 
     - pure JavaScript add-ons via JetPack
     - github:mozilla/addon-sdk
     - commonjs-modules
     - mobile-firefox support
+- structure
+    - add-on scripts / "background page", "UI page"
+    - content-scripts 
 
 ## Mobile
 
+- Web apps
+    - mobile-meta-tags: viewport, icon, apple-touch-start-up-image apple-mobile-web-app-capable...
+- Apache Cordova / PhoneGap
 
+## Desktop
+
+## Server
+
+- phantomjs - headless webkit
+- node.js - modules: jsdom, canvas, localstorage, XMLHttpRequest, webgl, ...
+- javascript sans html5-apis
+    - mongodb, riak, couchdb, couchbase, ...
+    - node.js, ringojs, Qt, ...
+    - v8, spidermonkey, rhino, nashorn, ...
 
 # HTML5 APIs
 - 5.0 currently candidate recommendation, to be recommendation in 2014
@@ -118,8 +135,9 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related
 - drag'n'drop
 - contenteditable
 - mathml
+- CSS3: border-radius, drop-shadow, animation, ...
 - fonts
-- touch-events, device orientation
+- touch-events, device orientation (angle of device in space)
 - fullscreen-api
 
 ## Other
