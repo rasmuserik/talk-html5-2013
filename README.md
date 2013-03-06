@@ -9,17 +9,23 @@ Slide composition as markdown in progress below.
 
 TODO
 
+
 ## Objectives of this talk
 
-- HTML5 as a platform
+- HTML5+JavaScript as a platform
 - Tour of the API
-- Tools
-- The underlying machine
+- Opensource languages and infrastructure
+
+## About Rasmus Erik
+
+- Developer@DBC, including bugfixing SpiderMonkey and Rhino
+- Freelance Computer Scientist
+- CS/platform viewpoint, not web-developer approach
 
 # The platform
 
-- JavaScript - most ubiquious deployable "machinecode"
-- HTML5 - collection of APIs (mainly ui)
+- JavaScript - most ubiquitous and easily deployable code target
+- HTML5 - collection of APIs (mainly ui) that makes it usable
 - Platforms: Browsers, Mobile, Desktop, Server
 
 ## The Major Engines
@@ -265,6 +271,7 @@ where `opensourcedays.cc` contains:
 ## Alternative languages
 
 - ClojureScript
+    - datastructures requires generational garbage collector for decent performance, only available on v8
 - Dart
 - HaXe
 - altjs.org
