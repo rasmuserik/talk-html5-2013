@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>reveal.js - The HTML Presentation Framework</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="reveal/css/reveal.min.css">
+        <link rel="stylesheet" href="slidestyle.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet 
+        <script>
+            document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        -->
+
+        <!--[if lt IE 9]>
+        <script src="reveal/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+                <section>
+                <h1>HTML5</h1>
+                <h3>Hacks and Highlights</h3>
+                <p><small>by Rasmus Erik</small></p>
+                <p>
+                </section>
+
+                <section><h2>Content</h2>
+                <p>
+                Introduction
+                </p>
+                <hr/>
+                <ol>
+                    <li>HTML5/JS as a platform</li>
+                    <li>Tour of the API</li>
+                    <li>Tools: Languages and infrastructure</li>
+                </ol>
+                <hr/>
+                <p>
+                Details
+                </p>
+                </section>
+
+                <section><h2>Rasmus Erik</h2>
+                <ul>
+                    <li>Programming language geek</li>
+                    <li>Developer at Dansk BiblioteksCenter<br>
+                        and freelance computer scientist</li>
+                    <li>CS/platform viewpoint,<br> not web-developer approach</li>
+                </ul>
+                </section>
+
+                <section><h2>You?</h2>
+                <ul>
+                    <li>Role: <span class="fragment">Developer?</span> <span class="fragment">Web&nbsp;Developer?</span> <span class="fragment">Computer&nbsp;Scientist?</span> <span class="fragment">Student?</span> <span class="fragment">Others??</span></li>
+                    <li>Languages: <span class="fragment">
+                        JavaScript?</span><span class="fragment">
+                        Java?</span><span class="fragment">
+                        C/C++?</span><span class="fragment">
+                        Scripting&nbsp;languages(Python,Lua,...)?</span><span class="fragment">
+                        Fun&nbsp;languages(Clojure,Haskell,Erlang,*ML,...)?</span><span class="fragment">
+                        Others??</span></li>
+                </ul>
+                </section>
+
+                <section data-markdown>
+                ## Objectives
+                - HTML5/JavaScript as _the_ app-platform
+                - Packaging opportunities
+                - High level overview of the HTML5 APIs
+                - Major languages targeting the platform
+                - Infrastructure for open source HTML5 development
+                </section>
+
+                <section>
+                <h1>Platform</h1>
+                <p><small><em>Platform</em> • APIs • Tools</small></p>
+                <br/>
+                <p>HTML5/JavaScript • Major Engines</p>
+                <p>Web • Mobile • Desktop • Server</p>
+                </section>
+
+                <section data-markdown>
+                ## HTML5/JavaScript
+
+                Most easily and widely deployable code target
+
+                ----
+
+                _JavaScript_ 
+
+                scripting language • somewhat functional • dynamic • good virtual machines
+
+                ----
+
+                _HTML5_ 
+                
+                collection of APIs that makes it usable
+
+
+                </section>
+
+                <section>
+                <section><h2>Major engines</h2>
+                <br>
+                <table style="vertical-align: middle; font-size: 80%; line-height: 1em;">
+                    <tr>
+                        <td rowspan="2" style="vertical-align:middle">WebKit</td>
+                        <td rowspan="2" style="vertical-align:middle">50%</td>
+                        <td>v8</td>
+                        <td>Chrome, (Opera), node.js, CouchBase, ...</td></tr>
+                    <tr style="padding-bottom: 1em;">
+                        <td>JavaScriptCore</td>
+                        <td>Safari, Qt, ...</td></tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr style="padding-bottom: 1em;">
+                        <td>Gecko</td>
+                        <td>20%</td>
+                        <td>SpiderMonkey</td>
+                        <td>Mozilla Firefox, Adobe Acrobat, CouchDB, MongoDB, Riak, ...</td></tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Trident</td>
+                        <td>25%</td>
+                        <td>Chakra</td>
+                        <td>Internet Explorer</td></tr>
+
+                </table>
+                </section>
+                <section><h2>Under the hood</h2>
+                </section>
+                </section>
+
+                <section data-markdown>
+                ## Web 
+                - Web apps
+                - Offline via cache manifest
+                - Browser apps
+                - Browser add-ons
+                </section>
+
+                <section data-markdown>
+                ## Mobile
+                - Mobile webpages
+                    - Special meta-tags
+                    - Different WebKits
+                - PhoneGap aka. Apache Cordova
+                </section>
+
+                <section data-markdown>
+                ## Desktop
+                - Gjs: Gnome apps in JavaScript
+                - Appjs, node-webkit - chromium+nodejs
+                - TideSDK - Titanium- WebKit/JavaScriptCore
+                - xulrunner, webapp-xul-wrapper - firefox
+                </section>
+
+                <section data-markdown>
+                ## Server
+                - PhantomJS - headless webkit
+                - node.js - many HTML5 APIs available as npm-modules
+                - NoSQL (JS÷HTML5): MongoDB, Riak, CouchDB, CouchBase, ...
+                - Java (JS÷HTML5): Nashorn, Rhino, RingoJS
+                </section>
+
+
+                <section><h1>APIs</h1>
+                <br/>
+                <p>Platform • <em>APIs</em> • Tools</p>
+                <br/>
+                <p>Graphics • Media • GUI • Input</p>
+                <p>Storage • Network • Code execution • Misc</p>
+                </section>
+
+                <section data-markdown>
+                ## Graphics
+
+                - 2d Canvas
+                - Vector SVG (not Android 2.3)
+                - 3d WebGL, (Khronos, not w3c), based on OpenGL ES 2.0, Firefox, Chrome, disabled in Safari by default
+                </section>
+
+                <section data-markdown>
+                ## Media
+
+                - audio
+                - video
+                - media-capture
+                - webrtc
+                </section>
+
+                <section data-markdown>
+                ## GUI
+                
+                - media queries
+                - drag-and-drop
+                - CSS3: animations shadows border-radius..
+                - contenteditable
+                - mathml
+                - fonts
+                - fullscreen
+
+
+                </section>
+
+                <section data-markdown>
+                ## Input
+
+                - touch-events
+                - device-orientation
+                - GPS
+                </section>
+
+                <section data-markdown>
+                ## Storage
+
+                - localStorage
+                - websql and indexeddb
+                - fileapi
+                </section>
+
+                <section data-markdown>
+                ## Network
+
+                - websockets
+                - webrtc
+                - protocol handler
+                - xhr • cross-origin resource sharing • binary data
+                </section>
+
+                <section data-markdown>
+                ## Code execution
+
+                - webworkers
+                - cross-document messaging
+                - offline-apps
+                - asynchronous script loading
+                </section>
+
+                <section data-markdown>
+                ## Misc
+                - typed arrays
+                - history api
+                - microdata / semantic web
+                </section>
+
+                <section><h1 style="font-size:300%">Languages &amp;<br>Infrastructure</h1>
+                <p>Platform • APIs • <em>Tools</em></p>
+                <br/>
+                <p>GitHub • Travis CI</p>
+                <p>C • Java • TypeScript • CoffeeScript • &amp;c</p>
+                </section>
+
+                <section data-markdown>
+                ## GitHub
+                - Open Source collaboration 
+                - JavaScript is most used language here, with 21% (feb 2013)
+                - Popular starred (feb 2013): bootstrap, _node,_ jquery, html5-boilerplate, _rails,_ impress.js, d3, backbone, font-awesome, _homebrew_
+                </section>
+
+                <section data-markdown>
+                ## Travis CI
+                - Continous Integration server for open source projects
+                - GitHub integration
+                - Simple config, - 4 line config file to run tests for node.js project
+                - Can test HTML5 in headless browser
+
+                ----
+
+                ## Testling CI
+                - Cross-browser testing
+                </section>
+                
+                <section data-markdown>
+                ### C/C++ • LLVM • Emscripten
+
+                - C-Libraries such as libSDL implemented on top of HTML5 (canvas, etc.)
+                - Ported app examples: LaTeX, zlib, OpenTTD, Python, Lua, Poppler, SuperTux, FreeType, SQLite, gnuplot, Cube 2: Sauerbraten, opendune, Qt, ...
+                - Useful for porting existing C/C++ code to run in JavaScript
+                - Just install llvm/clang-3.2 and checkout the git repository
+                - Performance cost
+                </section>
+
+                <section data-markdown>
+                ## Java • GWT
+                - Write JavaScript via Java
+                - Build on Java: developers, project-scalability, static typing, tooling, ...
+                - New Java-APIs for web-applications
+                </section>
+
+                <section>
+                <h4>Optional Typing <br> TypeScript &amp; Closure Compiler</h4>
+                <hr/>
+                <ul>
+                    <li>Typing for tooling and development scalability</li>
+                    <li>Google Closure Compiler - optimising JavaScript to JavaScript compiler, <br>with type-annotations in comments</li>
+                    <li>Microsoft TypeScript - JavaScript-superset with type-annotations, classes etc.</li>
+                </ul>
+                </section>
+
+                <section data-markdown>
+                ## CoffeeScript
+                - Syntactic sugar, avoid-boilerplate, array-comprehensions, simpler function definitions...
+                - Fixes some JavaScript quirks
+                - Hosted language
+                - Literate programming
+                </section>
+
+                <section data-markdown>
+                ## More languages
+                - ClojureScript - Clojure for JavaScript
+                    - Data structure performance depend on generational garbage collector, currently only in v8
+                - Dart, HaXe, and more on altjs.org
+                </section>
+
+                <section data-markdown>
+                # Details
+
+                - JavaScript-engines, offline&nbsp;apps, browser&nbsp;add-ons, mobile, node.js, 
+                - canvas/graphics, storage, network, webworker, semantic web
+                - Emscripten, GWT, CoffeeScript
+
+                ----
+
+                Questions?
+
+                </section>
+            </div>
+
+        </div>
+
+        <script src="reveal/lib/js/head.min.js"></script>
+        <script src="reveal/js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                //transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                // { src: 'reveal/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
