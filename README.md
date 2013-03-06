@@ -67,6 +67,8 @@ https://en.wikipedia.org/wiki/File:Web_browser_by_country.svg
 
 ## Desktop
 
+
+
 ## Server
 
 - phantomjs - headless webkit
