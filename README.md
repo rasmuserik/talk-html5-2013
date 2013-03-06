@@ -6,8 +6,8 @@ http://opensourcedays.org/2013/content/html5-hacks-and-highlights
 Slide composition as markdown in progress below.
 
 # Intro
-.
 
+TODO
 
 ## Objectives of this talk
 
@@ -18,10 +18,11 @@ Slide composition as markdown in progress below.
 
 # The platform
 
-- Browsers, Mobile, Desktop, Server
-- JavaScript as "machinecode"
+- JavaScript - most ubiquious deployable "machinecode"
+- HTML5 - collection of APIs (mainly ui)
+- Platforms: Browsers, Mobile, Desktop, Server
 
-## The Engines
+## The Major Engines
 
 - Webkit - 50% - v8/JavaScriptCore - Chrome, future Opera, node.js, CouchBase, ... / Safari, Qt, ...
 - Gecko - 20% - SpiderMonkey - Mozilla Firefox, Adobe Acrobat, CouchDB, MongoDB, Riak, ...
@@ -29,7 +30,7 @@ Slide composition as markdown in progress below.
 
 https://en.wikipedia.org/wiki/File:Web_browser_by_country.svg
 
-### Performance - under the hood
+### under the hood
 
 ## Web
 
@@ -63,19 +64,25 @@ https://en.wikipedia.org/wiki/File:Web_browser_by_country.svg
 
 - Web apps
     - mobile-meta-tags: viewport, icon, apple-touch-start-up-image apple-mobile-web-app-capable...
-- Apache Cordova / PhoneGap
+- mobile webkit differences and market share
+    - TODO
+- PhoneGap / Apache Cordova
+    - ¿widget.xml?
+    - TODO
 
 ## Desktop
 
-
+TODO
 
 ## Server
 
 - phantomjs - headless webkit
-- node.js - modules: jsdom, canvas, localstorage, XMLHttpRequest, webgl, ...
+- node.js 
+    - html5-apis as modules, ie. jsdom, canvas, localstorage, XMLHttpRequest, webgl, ...
+    - npm
 - javascript sans html5-apis
     - mongodb, riak, couchdb, couchbase, ...
-    - node.js, ringojs, Qt, ...
+    - ringojs, Qt, ...
     - v8, spidermonkey, rhino, nashorn, ...
 
 # HTML5 APIs
@@ -147,31 +154,18 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related
 - geolocation
 - typed arrays
 
+# Languages and infrastructure
 
-# Packaging
-JavaScript-engines, mobile-webkit, PhoneGap, mobile/desktop/server-common-target, node.js, package
+...
 
-## Web
-offline, web-store/distribution-channels
+## Java/C/...
 
-## Mobile Apps
+TODO
 
-## Desktop Apps
-
-## Browser Addons
-
-## Serverside
-
-# _Languages_
-
-## JavaScript
-
-- the machine-code of the web
-
-## Java(gwt) 
+### gwt 
 
 
-* eclipse-plugin - should be easy for eclipse users
+- eclipse-plugin - should be easy for eclipse users
 
 1) get/extract http://google-web-toolkit.googlecode.com/files/gwt-2.5.0.zip
 2) ./gwt-2.5.0/webAppCreator -out OpenSourceDays com.solsort.OpenSourceDays
@@ -198,7 +192,7 @@ HTML contains `<canvas id="canvas"></canvas>` and code consist of a single java-
     }
 
 
-## C(llvm) 
+### emscripten - llvm
 
 - Libraries such as libSDL implemented on top of HTML5 (canvas, etc.)
 - LaTeX, zlib, OpenTTD, Python, Lua, Poppler, SuperTux, FreeType, SQLite, gnuplot, Cube 2: Sauerbraten, opendune, Qt, ...
@@ -224,10 +218,11 @@ where `opensourcedays.cc` contains:
     }
 
 
-## CoffeeScript 
+## Syntactic sugar - CoffeeScript
 
 - layer of sugar on top of JavaScript
 - python/ruby-like
+- literate
 
 
     <!DOCTYPE HTML><html><head><title></title></head>
@@ -250,8 +245,7 @@ where `opensourcedays.cc` contains:
     </script><script src="coffee-script.js"></script></body></html>
 
 
-## JavaScripts with optional typing
-
+## Optional typing - Closure-Compiler and TypeScript 
 
 - tooling
 - large-scale development
@@ -268,22 +262,26 @@ where `opensourcedays.cc` contains:
 - Optimizing compiler
 - Google
 
-## Other languages
+## Alternative languages
 
 - ClojureScript
 - Dart
 - HaXe
 - altjs.org
 
-# _Infrastructure_
-## GitHub
 
-    https://github.com/languages (feb 2013): JavaScript 21%
-    Popular starred (feb 2013): bootstrap, node, jquery, html5-boilerplate, rails, impress.js, d3, backbone, font-awesome, homebrew
+## Opensource collaboration - GitHub
 
-## Travis
+- https://github.com/languages (feb 2013): JavaScript 21%
+- Popular starred (feb 2013): bootstrap, node, jquery, html5-boilerplate, rails, impress.js, d3, backbone, font-awesome, homebrew
 
-## Testling
+## Continous integration and testing - travis and testling
 
-## Meteor
+TODO
 
+
+# More in depth
+
+- platform/packaging
+- html5-apis
+- languages
