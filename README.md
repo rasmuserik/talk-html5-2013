@@ -8,7 +8,6 @@ Slide composition as markdown in progress below.
 # Intro
 .
 
-## View of the talk / about the presenter
 
 ## Objectives of this talk
 
@@ -17,17 +16,56 @@ Slide composition as markdown in progress below.
 - Tools
 - The underlying machine
 
-## HTML5
+# The platform
+
+- Browsers, Mobile, Desktop, Server
+- JavaScript as "machinecode"
+
+## The Engines
+
+- Webkit - 50% - v8/JavaScriptCore - Chrome, future Opera, node.js, CouchBase, ... / Safari, Qt, ...
+- Gecko - 20% - SpiderMonkey - Mozilla Firefox, Adobe Acrobat, CouchDB, MongoDB, Riak, ...
+- Trident - 25% - Chakra - Internet Explorer
+
+https://en.wikipedia.org/wiki/File:Web_browser_by_country.svg
+
+### Performance
+
+## Browser
+
+- Just served
+- HTML5 offline apps / cache manifest
+- Browser-apps
+- Browser addons for stronger api
+
+### HTML5 app marketplaces
+
+- The Web :)
+- Chrome Web Store
+- Facebook App Center
+- Mozilla Apps Marketplace
+
+### Browser addons
+
+- Chrome Extensions
+    - zipped 
+- Firefox Add-ons 
+    - pure JavaScript add-ons via JetPack
+    - github:mozilla/addon-sdk
+    - commonjs-modules
+    - mobile-firefox support
+
+## Mobile
 
 
-# _HTML5 and JavaScript_
-## HTML5 APIs
+
+# HTML5 APIs
 - 5.0 currently candidate recommendation, to be recommendation in 2014
 - 5.1 candidate recommendation in 2015
 
 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png/1280px-HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png
 
-### Network (websockets)
+## Network (websockets)
 
 - websockets
 - webrtc
@@ -36,7 +74,7 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related
     - cross-origin resource sharing
     - binary data
 
-### Media (audio/video)
+## Media (audio/video)
 
 - audio playback 
 - webaudio
@@ -44,37 +82,37 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related
 - subtitles
 - media-capture -getUserMedia/Stream API - firefox/chrome/opera
 
-### 2d/3d-graphics (canvas/webgl)
+## 2d/3d-graphics (canvas/webgl)
 
 - canvas 2d
 - webgl (Khronos, not w3c), based on OpenGL ES 2.0, Firefox, Chrome, disabled in Safari by default
 - svg (not android 2)
 
-### Process/IPC (webworkers, web messaging)
+## Process/IPC (webworkers, web messaging)
 
 - webworkers
 - cross-document messaging
 - ¿is it same communication?
 
-### Storage/file/database (fileapi/indexeddb/localstorage)
+## Storage/file/database (fileapi/indexeddb/localstorage)
 
 - localstorage
 - websql/indexeddb
 - fileapi
 
-### Microdata
+## Microdata
 
 - semantic web
 - linked data
 - html support for inline linked data 
 
-### Deployment (cache.manifest, async script loading, history)
+## Deployment (cache.manifest, async script loading, history)
 
 - offline apps
 - asynchronous script loading
 - history api
 
-### User Interface (css3/...)
+## User Interface (css3/...)
 
 - media queries
 - drag'n'drop
@@ -84,20 +122,14 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related
 - touch-events, device orientation
 - fullscreen-api
 
-### Other
+## Other
 
 - geolocation
 - typed arrays
 
-## JavaScript
 
-# _Platforms and packaging_
+# Packaging
 JavaScript-engines, mobile-webkit, PhoneGap, mobile/desktop/server-common-target, node.js, package
-## The Engines
-
-- Gecko - SpiderMonkey - Mozilla Firefox, Tizen, Adobe Acrobat, CouchDB, MongoDB, Riak, ...
-- Webkit - v8/JavaScriptCore - Chrome, future Opera, node.js, CouchBase, ... / Safari, Qt, ...
-- Trident - Chakra - Internet Explorer
 
 ## Web
 offline, web-store/distribution-channels
@@ -111,6 +143,11 @@ offline, web-store/distribution-channels
 ## Serverside
 
 # _Languages_
+
+## JavaScript
+
+- the machine-code of the web
+
 ## Java(gwt) 
 
 
@@ -168,6 +205,9 @@ where `opensourcedays.cc` contains:
 
 
 ## CoffeeScript 
+
+- layer of sugar on top of JavaScript
+- python/ruby-like
 
 
     <!DOCTYPE HTML><html><head><title></title></head>
