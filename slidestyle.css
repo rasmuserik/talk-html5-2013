@@ -63,27 +63,9 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #ccccff;
-}
-.reveal a:not(.image) {
-  /*color: #13daec;*/
+  color: #008;
   text-decoration: none;
-  -webkit-transition: color .15s ease;
-  -moz-transition: color .15s ease;
-  -ms-transition: color .15s ease;
-  -o-transition: color .15s ease;
-  transition: color .15s ease;
-}
-
-.reveal a:not(.image):hover {
-  /*color: #71e9f4;*/
-  text-shadow: none;
-  border: none;
-}
-
-.reveal .roll span:after {
-  /*color: #fff;*/
-  background: #0d99a5;
+  border-bottom: 1px solid #008;
 }
 
 /*********************************************
