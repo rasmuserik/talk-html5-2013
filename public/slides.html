@@ -32,6 +32,18 @@
     </head>
 
     <body>
+        <img style="position: fixed; top:8px; left: 100%; margin-left: -56px;" src="solsort.png">
+        <div id="timer" style="position: fixed; top: 8px; left: 8px;"></div>
+        <script>
+            var t0 = Date.now();
+            setInterval(function() {
+                var d = new Date();
+                document.getElementById("timer").innerHTML = 
+                   d.getHours() + ":" + (100 + d.getMinutes() + "").slice(1) + "<br>" +
+                   Math.round((Date.now() - t0)/60/1000) +
+                   "";
+            }, 1000)
+        </script>
 
         <div class="reveal">
 
@@ -72,56 +84,83 @@
 
                 <section><h2>You?</h2>
                 <ul>
-                    <li>Role: <span class="fragment">Developer?</span> <span class="fragment">Web&nbsp;Developer?</span> <span class="fragment">Computer&nbsp;Scientist?</span> <span class="fragment">Student?</span> <span class="fragment">Others??</span></li>
-                    <li>Languages: <span class="fragment">
-                        JavaScript?</span><span class="fragment">
-                        Java?</span><span class="fragment">
-                        C/C++?</span><span class="fragment">
-                        Scripting&nbsp;languages(Python,Lua,...)?</span><span class="fragment">
-                        Fun&nbsp;languages(Clojure,Haskell,Erlang,*ML,...)?</span><span class="fragment">
-                        Others??</span></li>
+                    <li class="fragment">Web Developers?</li>
+                    <li class="fragment">Codes C or Java?</li>
+                    <li class="fragment">Unix users?</li>
+                    <li class="fragment">Codes JavaScript?</li>
+                    <li class="fragment">Likes theoretical computer science?</li>
                 </ul>
                 </section>
 
-                <section data-markdown>
+                <!--section data-markdown>
                 ## Objectives
-                - HTML5/JavaScript as _the_ app-platform
-                - Packaging opportunities
+
+                - Platform and packaging
                 - High level overview of the HTML5 APIs
-                - Major languages targeting the platform
-                - Infrastructure for open source HTML5 development
-                </section>
+                - Major languages targeting Javascript
+                - Open source development infrastructure
+                </section-->
 
                 <section>
                 <h1>Platform</h1>
                 <p><small><em>Platform</em> • APIs • Tools</small></p>
                 <br/>
-                <p>HTML5/JavaScript • Major Engines</p>
+                <p>HTML5/JavaScript</p>
                 <p>Web • Mobile • Desktop • Server</p>
+                <p>Major Engines</p>
                 </section>
 
                 <section data-markdown>
-                ## HTML5/JavaScript
+                ### Why?
 
                 Most easily and widely deployable code target
 
                 ----
 
-                _JavaScript_ 
+                ### What? 
 
-                scripting language • somewhat functional • dynamic • good virtual machines
+                - JavaScript: scripting&nbsp;language • somewhat&nbsp;functional • dynamic • good&nbsp;virtual&nbsp;machines
 
-                ----
-
-                _HTML5_ 
-                
-                collection of APIs that makes it usable
+                - HTML5: APIs and more.
 
 
                 </section>
 
+                <section data-markdown>
+                ## Web 
+                - Web apps
+                - Offline via cache manifest
+                - Browser apps
+                - Browser add-ons
+                </section>
+
+                <section data-markdown>
+                ## Mobile
+                - Mobile webpages
+                    - Special meta-tags
+                    - Different WebKits
+                - PhoneGap aka. Apache Cordova
+                </section>
+
+                <section data-markdown>
+                ## Desktop
+                - node-webkit
+                - Apache Cordova (Qt+OS-X+Windows)
+                - Gjs: Gnome apps in JavaScript, SpiderMonkey
+                - Windows Store apps - JavaScript
+                - appjs, xulrunner, ...
+                </section>
+
+                <section data-markdown>
+                ## Server
+                - PhantomJS - headless webkit
+                - node.js - many HTML5 APIs available as npm-modules
+                - NoSQL (JS÷HTML5): MongoDB, Riak, CouchDB, CouchBase, ...
+                - Java (JS÷HTML5): Nashorn, Rhino, RingoJS
+                </section>
+
                 <section>
-                <section><h2>Major engines</h2>
+                <section><h2>Major Engines</h2>
                 <br>
                 <table style="vertical-align: middle; font-size: 80%; line-height: 1em;">
                     <tr>
@@ -148,39 +187,8 @@
                 </table>
                 </section>
                 <section><h2>Under the hood</h2>
+                - TODO
                 </section>
-                </section>
-
-                <section data-markdown>
-                ## Web 
-                - Web apps
-                - Offline via cache manifest
-                - Browser apps
-                - Browser add-ons
-                </section>
-
-                <section data-markdown>
-                ## Mobile
-                - Mobile webpages
-                    - Special meta-tags
-                    - Different WebKits
-                - PhoneGap aka. Apache Cordova
-                </section>
-
-                <section data-markdown>
-                ## Desktop
-                - Gjs: Gnome apps in JavaScript
-                - Appjs, node-webkit - chromium+nodejs
-                - TideSDK - Titanium- WebKit/JavaScriptCore
-                - xulrunner, webapp-xul-wrapper - firefox
-                </section>
-
-                <section data-markdown>
-                ## Server
-                - PhantomJS - headless webkit
-                - node.js - many HTML5 APIs available as npm-modules
-                - NoSQL (JS÷HTML5): MongoDB, Riak, CouchDB, CouchBase, ...
-                - Java (JS÷HTML5): Nashorn, Rhino, RingoJS
                 </section>
 
 
@@ -282,23 +290,82 @@
                 ## Travis CI
                 - Continous Integration server for open source projects
                 - GitHub integration
-                - Simple config, - 4 line config file to run tests for node.js project
-                - Can test HTML5 in headless browser
+                - Simple config: `package.json` &amp; `.travis.yml`
+                - Can test HTML5 in headless browser (phantomjs or firefox + xvfb)
 
                 ----
 
-                ## Testling CI
-                - Cross-browser testing
+                ... also Testling CI, cross-browser testing...
                 </section>
                 
-                <section data-markdown>
-                ### C/C++ • LLVM • Emscripten
+                <section>
+                <section>
+                <h3>C/C++ • LLVM • Emscripten</h3>
 
-                - C-Libraries such as libSDL implemented on top of HTML5 (canvas, etc.)
-                - Ported app examples: LaTeX, zlib, OpenTTD, Python, Lua, Poppler, SuperTux, FreeType, SQLite, gnuplot, Cube 2: Sauerbraten, opendune, Qt, ...
-                - Useful for porting existing C/C++ code to run in JavaScript
-                - Just install llvm/clang-3.2 and checkout the git repository
-                - Performance cost
+                <ul>
+                <li>Low-level virtual machine: C/C++ <br> Fortran, Ada, Haskell, ...</li>
+                <li>LaTeX, libSDL, zlib, OpenTTD, Python, Lua, Poppler, FreeType, SQLite, gnuplot, Cube 2: Sauerbraten, OpenDUNE, Qt, ...</li>
+                <li>Useful for porting existing C/C++ code to run in JavaScript</li>
+                <li>Moderate performance cost</li>
+                </ul>
+                </section>
+                <section data-markdown>
+                ## Getting started
+
+                1. Install llvm/clang-3.2 from http://llvm.org/releases/download.html#3.2
+                2. git clone git@github.com:kripken/emscripten.git
+                3. emscripten/emcc src.cc -o dst.[html|js]
+                </section>
+                <section><h2>C code</h2>
+                <br>
+                <pre style="font-size: 36px;"><code>
+  #include &lt;stdio.h&gt;
+  int main() {
+      int i = 10;
+      while(--i) {
+          printf("Countdown %d\n", i);
+      }
+  }
+                </code></pre></section>
+                <section>
+                <h2>Compiled `-O0`</h2>
+                <pre style="font-size: 24px;"><code>  while(1) switch(label) {
+    case 2:
+      var $1;
+      var $i;
+      $1=0;
+      $i=10;
+      label = 3; break;
+    case 3:
+      var $3=$i;
+      var $4=((($3)-(1))|0);
+      $i=$4;
+      var $5=(($4)|(0))!=0;
+      if ($5) { label = 4; break; } else { label = 5; break; }
+    case 4:
+      var $7=$i;
+      var $8=_printf(((5242880)|0), (tempInt=STACKTOP,STACKTOP = (STACKTOP + 4)|0,assert(STACKTOP|0 < STACK_MAX|0),HEAP32[((tempInt)>>2)]=$7,tempInt));
+      label = 3; break;
+    case 5:
+      var $10=$1;
+      STACKTOP = __stackBase__;
+      return $10;
+                </code></pre></section>
+                <section>
+                <h2>Compiled -O2</h2>
+                <pre style="font-size: 24px;"><code style="width: 100%">  
+  r1 = STACKTOP;
+  _printf(5242880, (tempInt = STACKTOP, STACKTOP = STACKTOP + 4 | 0, HEAP32[tempInt >> 2] = 9, tempInt));
+  _printf(5242880, (tempInt = STACKTOP, STACKTOP = STACKTOP + 4 | 0, HEAP32[tempInt >> 2] = 8, tempInt));
+  _printf(5242880, (tempInt = STACKTOP, STACKTOP = STACKTOP + 4 | 0, HEAP32[tempInt >> 2] = 7, tempInt));
+  _printf(5242880, (tempInt = STACKTOP, STACKTOP = STACKTOP + 4 | 0, HEAP32[tempInt >> 2] = 6, tempInt));
+  _printf(5242880, (tempInt = STACKTOP, STACKTOP = STACKTOP + 4 | 0, HEAP32[tempInt >> 2] = 5, tempInt));
+  _printf(5242880, (tempInt = STACKTOP, STACKTOP = STACKTOP + 4 | 0, HEAP32[tempInt >> 2] = 4, tempInt));
+  _printf(5242880, (tempInt = STACKTOP, STACKTOP = STACKTOP + 4 | 0, HEAP32[tempInt >> 2] = 3, tempInt));
+  _printf(5242880, (tempInt = STACKTOP, STACKTOP = STACKTOP + 4 | 0, HEAP32[tempInt >> 2] = 2, tempInt));
+  _printf(5242880, (tempInt = STACKTOP, STACKTOP = STACKTOP + 4 | 0, HEAP32[tempInt >> 2] = 1, tempInt));
+  STACKTOP = r1;
+                 </code></pre></section>
                 </section>
 
                 <section data-markdown>
@@ -364,6 +431,7 @@
 
                 //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
                 //transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                transition: "linear",
 
                 // Optional libraries used to extend on reveal.js
                 dependencies: [
