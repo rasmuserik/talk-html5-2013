@@ -85,7 +85,7 @@
                     <li class="fragment">Hacks C or Java?</li>
                     <li class="fragment">Unix users?</li>
                     <li class="fragment">Groks JavaScript?</li>
-                    <li class="fragment">Likes theoretical computer science?</li>
+                    <li class="fragment">Know HTML5?</li>
                 </ul>
                 </section>
 
@@ -107,6 +107,7 @@
                 </section>
 
                 <section>
+                <section>
                 <h3>Why?</h3>
                     <em>#1</em> easy distribution, and wide deployment
                 <hr/>
@@ -116,6 +117,33 @@
                     <li>JavaScript: dynamic, somewhat<br> functional, scripting&nbsp;language<br> with good&nbsp;virtual&nbsp;machines</li> 
                     <li>HTML5: APIs and more</li>
                 </ul>
+                </section>
+                <section><h2>Major Engines</h2>
+                <br>
+                <table style="vertical-align: middle; font-size: 80%; line-height: 1em;">
+                    <tr>
+                        <td rowspan="2" style="vertical-align:middle">WebKit</td>
+                        <td rowspan="2" style="vertical-align:middle">50%</td>
+                        <td>v8</td>
+                        <td>Chrome, (Opera), node.js, CouchBase, ...</td></tr>
+                    <tr style="padding-bottom: 1em;">
+                        <td>JavaScriptCore</td>
+                        <td>Safari, Qt, ...</td></tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr style="padding-bottom: 1em;">
+                        <td>Gecko</td>
+                        <td>20%</td>
+                        <td>SpiderMonkey</td>
+                        <td>Mozilla Firefox, Adobe Acrobat, CouchDB, MongoDB, Riak, ...</td></tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Trident</td>
+                        <td>25%</td>
+                        <td>Chakra</td>
+                        <td>Internet Explorer</td></tr>
+
+                </table>
+                </section>
                 </section>
 
                 <section>
@@ -162,39 +190,6 @@
                 </section>
                 </section>
 
-                <section>
-                <section><h2>Major Engines</h2>
-                <br>
-                <table style="vertical-align: middle; font-size: 80%; line-height: 1em;">
-                    <tr>
-                        <td rowspan="2" style="vertical-align:middle">WebKit</td>
-                        <td rowspan="2" style="vertical-align:middle">50%</td>
-                        <td>v8</td>
-                        <td>Chrome, (Opera), node.js, CouchBase, ...</td></tr>
-                    <tr style="padding-bottom: 1em;">
-                        <td>JavaScriptCore</td>
-                        <td>Safari, Qt, ...</td></tr>
-                    <tr><td>&nbsp;</td></tr>
-                    <tr style="padding-bottom: 1em;">
-                        <td>Gecko</td>
-                        <td>20%</td>
-                        <td>SpiderMonkey</td>
-                        <td>Mozilla Firefox, Adobe Acrobat, CouchDB, MongoDB, Riak, ...</td></tr>
-                    <tr><td>&nbsp;</td></tr>
-                    <tr>
-                        <td>Trident</td>
-                        <td>25%</td>
-                        <td>Chakra</td>
-                        <td>Internet Explorer</td></tr>
-
-                </table>
-                </section>
-                <section><h2>Under the hood</h2>
-                - TODO
-                </section>
-                </section>
-
-
                 <section><h1>APIs</h1>
                 <br/>
                 <p>Platform • <em>APIs</em> • Tools</p>
@@ -204,6 +199,52 @@
                 </section>
                 <!--TODO: GUI-APIs, System APIs -->
 
+        
+                <section>
+                <section class="transition-cube cube">
+                    <h2>GUI</h2>
+                    <ul>
+                    <li>Graphics: canvas, svg, webgl</li>
+                    <li>Media: audio, video, media-capture, webrtc</li>
+                    <li>CSS3: media queries, animations, shadow, 3d-transform, fonts...</li>
+                    <li>Input: touch, device-orientation, geolocation</li>
+                    <li>Misc: MathML, fullscreen, contenteditable, drag-n-drop</li>
+                    </ul>
+                </section>
+                <section>
+                <h2>Canvas Example</h2>
+                Trace 40 random walks.
+                <pre style="font-size: 24px;"><code>var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+var buf = ctx.getImageData(0, 0, canvas.width, canvas.height);
+for(var i = 0; i < 40; ++i) {
+    var x = canvas.width / 2, y = canvas.height / 2;
+    for(var j = 0; j &lt; 50000; ++j) {
+        x = (x + Math.random() * 5 - 2)|0;
+        y = (y + Math.random() * 5 - 2)|0;
+        buf.data[x * 4 + y * 4 * canvas.width] += 10; 
+    } 
+}
+ctx.putImageData(buf, 0, 0);</code></pre></section>
+                <section>
+                    <canvas id="canvas" width="800" height="600">
+                    </canvas>
+                    <script>
+                    var canvas = document.getElementById("canvas");
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    var buf = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    for(var i = 0; i < 40; ++i) {
+                        var x = canvas.width / 2, y = canvas.height / 2;
+                        for(var j = 0; j < 50000; ++j) {
+                            x = (x + Math.random() * 5 - 2)|0;
+                            y = (y + Math.random() * 5 - 2)|0;
+                            buf.data[x * 4 + y * 4 * canvas.width] += 10; } }
+                    ctx.putImageData(buf, 0, 0);
+                    </script>
+                </section>
                 <section data-markdown>
                 ## Graphics
 
@@ -232,7 +273,6 @@
                 - fonts
                 - fullscreen
 
-
                 </section>
 
                 <section data-markdown>
@@ -242,7 +282,18 @@
                 - device-orientation
                 - GPS
                 </section>
+                </section>
 
+                <section>
+                <section>
+                    <h2>System</h2>
+                    <ul>
+                    <li>Storage: localStorage, websql, indexeddb, fileapi</li>
+                    <li>Network: websockets, xhr2(cors, binary), protocol handlers, webrtc</li>
+                    <li>Code execution: webworkers, cross-document-messaging, offline-apps, async script loading</li>
+                    <li>Misc: typed arrays, history api, microdata/semantic-web</li>
+                    </ul>
+                </section>
                 <section data-markdown>
                 ## Storage
 
@@ -275,6 +326,7 @@
                 - history api
                 - microdata / semantic web
                 </section>
+                </section>
 
                 <section><h1 style="font-size:300%">Infrastructure <br>&amp; Languages</h1>
                 <p>Platform • APIs • <em>Tools</em></p>
@@ -283,6 +335,15 @@
                 <p>C • Java • TypeScript • CoffeeScript • &amp;c</p>
                 </section>
 
+                <section>
+                <section data-markdown>
+                ## Infrastructure
+
+                - GitHub - code sharing and collaboration
+                - Travis-CI - continous integration
+
+
+                </section>
                 <section data-markdown>
                 ## GitHub
                 - Open Source collaboration 
@@ -296,15 +357,23 @@
                 - GitHub integration
                 - Simple config: `package.json` &amp; `.travis.yml`
                 - Can test HTML5 in headless browser (phantomjs or firefox + xvfb)
-
-                ----
-
-                ... also Testling CI, cross-browser testing...
+                </section>
+                <section>
+                <h2>package.json</h2>
+                <pre style="font-size: 36px;"><code>{ "name": "MyApp",
+  "version": "0.0.0",
+  "scripts": {"test": "./runTests.sh"} }</code></pre>
+  <br>
+                <h2>.travis.yml</h2>
+                <pre style="font-size: 36px;"><code>language: node_js
+node_js:
+    - 0.8</code></pre>
+                </section>
                 </section>
                 
                 <section>
                 <section>
-                <h3>C/C++ • LLVM • Emscripten</h3>
+                <h3>Emscripten • LLVM • C/C++</h3>
 
                 <ul>
                 <li>Low-level virtual machine: C/C++ <br> Fortran, Ada, Haskell, ...</li>
@@ -387,11 +456,51 @@
                  </code></pre></section>
                 </section>
 
+
+                <section>
                 <section data-markdown>
                 ## Java • GWT
                 - Write JavaScript via Java
                 - Build on Java: developers, project-scalability, static typing, tooling, ...
                 - New Java-APIs for web-applications
+                </section>
+
+                <section data-markdown>
+                ## Getting started
+
+                - eclipse-plugin - should be easy for eclipse users, - or:
+
+                1. get/extract http://google-web-toolkit.googlecode.com/files/gwt-2.5.0.zip
+                2. ./gwt-2.5.0/webAppCreator -out AppName com.rasmuserik.AppName
+                3. cd AppName; ant devmode
+                </section>
+                <section>
+                <h3>Sample canvas program</h3>
+                <pre style="font-size: 24px;"><code style="width: 100%">package com.rasmuserik.client;
+
+import com.google.gwt.core.client.*;
+import com.google.gwt.dom.client.*;
+import com.google.gwt.canvas.dom.client.Context2d;
+
+public class AppName implements EntryPoint {
+  public void onModuleLoad() {
+    CanvasElement canvas = (CanvasElement)
+        (Element)DOM.getElementById("canvas");
+    Context2d ctx = canvas.getContext2d();
+    ctx.fillText("Hello HTML5 GWT", 0, 20);
+  }
+} </code></pre></section>
+                </section>
+
+
+                <section>
+                <section data-markdown>
+                ## More Languages
+                - TypeScript - traditional oop and optional typing
+                - Closure Compiler - type annotation in comments, optimising compiler
+                - CoffeScript - syntactic sugar, literate programming
+                - ClojureScript - clojure for JavaScript
+                - HaXe, Dart and more on altjs.org
                 </section>
 
                 <section>
@@ -413,10 +522,11 @@
                 </section>
 
                 <section data-markdown>
-                ## More languages
+                ## ClojuerScript etc.
                 - ClojureScript - Clojure for JavaScript
                     - Data structure performance depend on generational garbage collector, currently only in v8
                 - Dart, HaXe, and more on altjs.org
+                </section>
                 </section>
 
                 <section data-markdown>
