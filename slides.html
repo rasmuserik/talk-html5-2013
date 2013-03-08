@@ -56,7 +56,7 @@
 
                 <section><h2>Content</h2>
                 <p>
-                Introduction
+                Introductions
                 </p>
                 <hr/>
                 <ol>
@@ -85,6 +85,7 @@
                     <li class="fragment">Hacks C or Java?</li>
                     <li class="fragment">Unix users?</li>
                     <li class="fragment">Groks JavaScript?</li>
+                    <li class="fragment">Don't make software?</li>
                     <li class="fragment">Know HTML5?</li>
                 </ul>
                 </section>
@@ -102,8 +103,8 @@
                 <h1>Platform</h1>
                 <p><small><em>Platform</em> • APIs • Tools</small></p>
                 <br/>
-                <p>HTML5/JavaScript</p>
-                <p>Packaging • Major Engines</p>
+                <p>HTML5/JavaScript • Why? • What?</p>
+                <p>Packaging targets</p>
                 </section>
 
                 <section>
@@ -148,7 +149,7 @@
 
                 <section>
                 <section data-markdown>
-                ## Packaging
+                ## Targets
                 - Browser: offline apps - cache manifest, marketplaces, add-ons
                 - Mobile: web vs. hybrid, meta-tags, PhoneGap aka. Apache Cordova
                 - Desktop: node-webkit, Cordova, Gnome&nbsp;and&nbsp;Windows&nbsp;apps
@@ -194,8 +195,8 @@
                 <br/>
                 <p>Platform • <em>APIs</em> • Tools</p>
                 <br/>
-                <p>Graphics • Media • GUI • Input</p>
-                <p>Storage • Network • Code execution • Misc</p>
+                <p>Graphics and User Interfacing</p>
+                <p>System APIs</p>
                 </section>
                 <!--TODO: GUI-APIs, System APIs -->
 
@@ -214,7 +215,7 @@
                 <section>
                 <h2>Canvas Example</h2>
                 Trace 40 random walks.
-                <pre style="font-size: 24px;"><code>var canvas = document.getElementById("canvas");
+                <pre style="font-size: 24px;"><code contenteditable="true">var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -332,14 +333,15 @@ ctx.putImageData(buf, 0, 0);</code></pre></section>
                 <p>Platform • APIs • <em>Tools</em></p>
                 <br/>
                 <p>GitHub • Travis CI</p>
-                <p>C • Java • TypeScript • CoffeeScript • &amp;c</p>
+                <p>C • Java • More languages</p>
                 </section>
 
                 <section>
                 <section data-markdown>
-                ## Infrastructure
+                ### Infrastructure
 
                 - GitHub - code sharing and collaboration
+                    - _the_ place for open source JavaScript
                 - Travis-CI - continous integration
 
 
@@ -532,15 +534,20 @@ public class AppName implements EntryPoint {
                 <section data-markdown>
                 # Details
 
-                - JavaScript-engines, offline&nbsp;apps, browser&nbsp;add-ons, mobile, node.js, 
-                - canvas/graphics, storage, network, webworker, semantic web
-                - Emscripten, GWT, CoffeeScript
+                - HTML5/JavaScript - the engines
+                - APIs - overview and example
+                - GitHub-fun, and continous integration
+                - Emscripten - how it work, C in JavaScript
+                - GWT - getting started
+                - More languages: CoffeScript, TypeScript, Closure Compiler, ClojureScript, ...
                 </section>
                 <section>
-                <h1>The End</h1>
+                <h1>Talk done</h1>
+                <p>- now go out build something awesome :)</p>
                 <br>
-                <h2>Questions?</h2>
                 <br>
+                <br>
+                <p>Slides:</p>
                 <p style="font-size: 100%"><a href="http://rasmuserik.com/html5">rasmuserik.com/html5</a></p>
 
 
