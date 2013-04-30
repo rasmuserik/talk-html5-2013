@@ -1,4 +1,4 @@
-# HTML5 Hacks and Highlights - presentation at opensourcedays 2013
+# ![logo](https://solsort.com/_logo.png) HTML5 Hacks and Highlights - presentation at opensourcedays 2013
 
 
 Slideshow is online at http://rasmuserik.com/html5
