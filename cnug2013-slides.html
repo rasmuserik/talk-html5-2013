@@ -94,6 +94,7 @@
                 <section data-markdown>
                 ## Live code tour
                 - Plain raw HTML5+JavaScript from scratch
+                - with webkit prefixes
                 - Quick'n'dirty: no fallback, feature detection nor unit tests
                 </section>
 
@@ -108,24 +109,129 @@
     &lt;/body>
 &lt;/html>
 </code></pre></section>
-                </section>
-                </section>
 
+                <section>
+                <h3>Video playback</h3>
+                <pre style="font-size: 36px;"><code style="width: 100%">&lt;video id=video controls autoplay loop>
+    &lt;source src=demo.ogv 
+            type="video/ogg">
+&lt;/video>
+</code></pre></section>
+                <section>
+                <h3>Canvas</h3>
+                <pre style="font-size: 36px;"><code style="width: 100%">&lt;canvas id=canvas width=640 height=480>
+&lt;/canvas>
+</code></pre>
+<pre style="font-size: 36px;"><code style="width: 100%">var ctx = canvas.getContext("2d");
+function shot() {
+    ctx.drawImage(video, 0, 0);
+}
+</code></pre></section>
+                <section>
+                <h3>Video capture</h3>
+                <pre style="font-size: 30px;"><code style="width: 100%">function capture() {
+    navigator.webkitGetUserMedia({video:true}, 
+            function(stream) {
+        video.src = URL.createObjectURL(stream)
+            }, function(err) {});
+}</code></pre></section>
+
+                <section>
+                <h3>Canvas pixel access</h3>
+                <pre style="font-size: 30px;"><code style="width: 100%">function invertRed() {
+    imData = ctx.getImageData(0,0,640,480);
+    data = imData.data;
+    for(var i = 0; i < data.length; i += 4) {
+        data[i] = 255 - data[i]
+    }
+    ctx.putImageData(imData,0,0);
+}</code></pre>
+                <p>Implicit typed array access</p>
+                </section>
+                <section>
+                <h3>Save/load to local storage</h3>
+                <pre style="font-size: 30px;"><code style="width: 100%">function save() {
+    localStorage.setItem("image", 
+        canvas.toDataURL("image/jpeg", 0.8));
+}</code></pre>
+                <pre style="font-size: 30px;"><code style="width: 100%">function load() {
+    var img = new Image();
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+    }
+    img.src = localStorage.getItem("image");
+}</code></pre>
+                </section>
+                <section>
+                <h3>Fullscreen</h3>
+                <pre style="font-size: 40px;"><code style="width: 100%">function fullscreen() {
+    canvas.webkitRequestFullScreen();
+}</code></pre></section>
+                <section>
+                <h3>CSS3 and animation</h3>
+                <pre style="font-size: 30px;"><code style="width: 100%">.anim { position: absolute; transition: all 2s;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5); }
+.left { left: 0px; width: 640px; }
+.right { left: 680px; width: 120px; } </code></pre>
+                <pre style="font-size: 30px;"><code style="width: 100%">&lt;video class="anim left" ...
+&lt;canvas class="anim right" ... </code></pre>
+                <pre style="font-size: 30px;"><code style="width: 100%">function swap() {
+    var t = video.className;
+    video.className = canvas.className;
+    canvas.className = t;
+}</code></pre>
+                </section>
+                <section>
+                <h3>Microdata, contenteditable</h3>
+                <pre style="font-size: 30px;"><code style="width: 100%">&lt;div itemscope itemtype="http://schema.org/Thing">
+    &lt;div>Title: 
+        &lt;span itemprop=name contenteditable>
+            Untitled
+        &lt;/span>
+    &lt;/div>
+    &lt;div>Author: 
+        &lt;span itemprop=description contenteditable>
+            Some descriptive text...
+        &lt;/span>
+    &lt;/div>
+&lt;/div>
+</code></pre>
+</section>
+                </section>
 
                 <section>
                 <section data-markdown>
-                ## Concrete examples
+                ## Concrete cases
+
+
+                --------
+
                 
-                - http://dragimation.solsort.com
-                - Languages, coffeescript: legoland-billund-resort
-                - Libraries, d3.js: dragimation
-                    - d3.js example on localhost
-                - Not just browser, - ie. canvas server-side, physical card games made with HTML5!
-                - State of the art: Unreal Engine 1+MLoC C ported in 4 days
+                Languages
+
+                Libraries
+
+                Packaging
+                </section>
+                <section>
+                <h2>Languages</h2>
+                <ul>
+                <li>JavaScript/HTML5 is a target platform</li>
+                <li>TypeScript, GWT, Emscripten, ClojureScript, CoffeeScript, ...</li>
+                <li>Sample CoffeeScript solution: <a href="http://dragimation.solsort.com/">dragimation.solsort.com</a></li>
+                </ul>
+                </section>
+                <section>
+                <h2>Libraries</h2>
+                <ul>
+                <li>HTML5 is just the bottom of the pyramid of giants on whoose shoulders we stand</li>
+                <li>D3.js using example on localhost</li>
+                </ul>
                 </section>
                 <section>
                 <p>Packaging - not just web</p>
-                <img src=.jpg>
+                <img src=IMG_4770-notescore.jpg>
+                <p>Cordova/PhoneGap &rarr; mobile+desktop
                 </section>
                 <section>
                 <p>Real world</p>

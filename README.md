@@ -4,3 +4,8 @@
 Slideshow is online at http://rasmuserik.com/html5
 
 http://opensourcedays.org/2013/content/html5-hacks-and-highlights
+
+
+----
+
+serve locally with `python -m SimpleHTTPServer`
