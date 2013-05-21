@@ -68,7 +68,9 @@
                 <br>
                 <p>API features: GUI • System</p>
                 <br>
-                <p>Code samples: Api tour • Real World</p>
+                <p>Api tour - live coding of a photo booth</p>
+                <br>
+                <p>Concrete cases</p>
                 </section>
 
                 <section><h2>GUI</h2>
@@ -83,7 +85,7 @@
 
                 <section><h2>System</h2>
                 <ul>
-                    <li>Storage: <em>localStorage</em>, websql, indexeddb, fileapi</li>
+                    <li>Storage: <em>localStorage</em>, indexeddb, fileapi</li>
                     <li>Network: websockets, xhr2(cors, binary), protocol handlers, webrtc</li>
                     <li>Code execution: webworkers, cross-document-messaging, offline-apps, async script loading</li>
                     <li>Misc: <em>typed arrays</em>, history api, <em>microdata/semantic-web</em></li>
@@ -145,6 +147,21 @@ function shot() {
 }</code></pre></section>
 
                 <section>
+                <h3>CSS3 and animation</h3>
+                <pre style="font-size: 30px;"><code style="width: 100%">.anim { position: absolute; transition: all 2s;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5); }
+.left { left: 0px; width: 640px; }
+.right { left: 680px; width: 120px; } </code></pre>
+                <pre style="font-size: 30px;"><code style="width: 100%">&lt;video class="anim left" ...
+&lt;canvas class="anim right" ... </code></pre>
+                <pre style="font-size: 30px;"><code style="width: 100%">function swap() {
+    var t = video.className;
+    video.className = canvas.className;
+    canvas.className = t;
+}</code></pre>
+                </section>
+
+                <section>
                 <h3>Canvas pixel access</h3>
                 <pre style="font-size: 30px;"><code style="width: 100%">function invertRed() {
     imData = ctx.getImageData(0,0,640,480);
@@ -156,6 +173,7 @@ function shot() {
 }</code></pre>
                 <p>Implicit typed array access</p>
                 </section>
+
                 <section>
                 <h3>Save/load to local storage</h3>
                 <pre style="font-size: 30px;"><code style="width: 100%">function save() {
@@ -170,25 +188,13 @@ function shot() {
     img.src = localStorage.getItem("image");
 }</code></pre>
                 </section>
+
                 <section>
                 <h3>Fullscreen</h3>
                 <pre style="font-size: 40px;"><code style="width: 100%">function fullscreen() {
     canvas.webkitRequestFullScreen();
 }</code></pre></section>
-                <section>
-                <h3>CSS3 and animation</h3>
-                <pre style="font-size: 30px;"><code style="width: 100%">.anim { position: absolute; transition: all 2s;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5); }
-.left { left: 0px; width: 640px; }
-.right { left: 680px; width: 120px; } </code></pre>
-                <pre style="font-size: 30px;"><code style="width: 100%">&lt;video class="anim left" ...
-&lt;canvas class="anim right" ... </code></pre>
-                <pre style="font-size: 30px;"><code style="width: 100%">function swap() {
-    var t = video.className;
-    video.className = canvas.className;
-    canvas.className = t;
-}</code></pre>
-                </section>
+
                 <section>
                 <h3>Microdata, contenteditable</h3>
                 <pre style="font-size: 30px;"><code style="width: 100%">&lt;div itemscope itemtype="http://schema.org/Thing">
